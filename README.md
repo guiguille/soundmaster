@@ -10,14 +10,21 @@ Installation
 
 [nodejs](http://nodejs.org) - Nodejs Backend
 
+
 Setup
 ----------------
 Go to VLC > preferences > Lua HTTP, set up a password
 Then modify "password" in "index.js", line 22
 
-then go to /js folder
+then go to  /soundmaster folder
 ``` js
-node server.js
+npm install
+```
+when install is finished
+``` js
+cd js && node server.js
 ```
 And you are up to go!
+
+Feel free to contribute!
 
