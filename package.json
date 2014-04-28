@@ -23,5 +23,9 @@
   "dependencies": {
     "socket.io": "^0.9.16",
     "vlc-api": "0.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.6.2",
+    "gulp-nodemon": "^1.0.2"
   }
 }
