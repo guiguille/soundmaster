@@ -22,7 +22,7 @@ npm install
 ```
 when install is finished
 ``` js
-cd js && node server.js
+node js/server.js
 ```
 And you are up to go!
 

@@ -1,0 +1,21 @@
+{
+  "name": "soundmaster",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Guiguille/soundmaster",
+  "authors": [
+    "Jerome Botineau <jeromebotineau@gmail.com>"
+  ],
+  "license": "ISC",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ratchet": "~1.0.0"
+  }
+}
