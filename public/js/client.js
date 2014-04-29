@@ -2,13 +2,12 @@ $(function(){
     
     new Heyoffline();
 
-    var socket = io.connect('http://192.168.0.16:1337');
+    var socket = io.connect('http://192.168.1.38:1337');
 
     
     
     
     window.addEventListener('push', function(data){
-      console.log(data);
       if(data["detail"]["state"]["title"] == "Detail") LireStream();
     });
 
@@ -17,7 +16,7 @@ $(function(){
     });
 
 
-    function extractUrlParams(){  
+    function extractUrlParams(){
       var t = location.search.substring(1).split('&');
       var f = [];
       for (var i=0; i<t.length; i++){
@@ -29,10 +28,12 @@ $(function(){
 
     function LireStream(){
       stream = extractUrlParams();
-      socket.emit('PlayStream', {
+      socket.emit('PlayStream',
+          {
             type : stream["type"],
             stream : stream["track"]
-          })
+          }
+        )
       /*SC.stream("/tracks/" + extractUrlParams(), function(sound){
         soundManager.stopAll();
         sound.play();

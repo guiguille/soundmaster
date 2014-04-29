@@ -1,25 +1,30 @@
-var http = require('http');
-var vlc = require('vlc-api')();
+var http = require('http'),
+    vlc = require('vlc-api')(),
+    sys = require('sys'),
+    express = require('express'),
+    app         = express();
+
 //var vlc = require('../node_modules/vlc-api/')();
 
-httpServer = http.createServer(function(req, res){
-	res.end('hello world');
+app.use(express.static(process.cwd() + '/public'));
+
+app.get('/', function (req, res) {
+    res.send('hello world');
 });
 
-httpServer.listen(1337);
+var server = app.listen(1337);
 
 /*Pinger_ping("192.168.1.10:8080", function(cb){
   console.log(cb);
 });*/
 
-var io = require('socket.io').listen(httpServer);
+var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function(socket) {
-	/*
-	* Je me connecte
-	*/
-	socket.on('PlayStream', function(sound){
-		console.log(sound);
+  /*
+  * Je me connecte
+  */
+  socket.on('PlayStream', function(sound){
     if(sound.type == "youtube"){
       track = encodeURI('http://www.youtube.com/watch?v=' + sound.stream);
     }else{
@@ -33,11 +38,11 @@ io.sockets.on('connection', function(socket) {
       }
     catch(err)
       {
-        console.log("Lancer l'interface web de VLC")
+        console.log("Lancer l'interface web de VLC");
       }
-		/*io.socket.emit('played');
-		users[me.id] = me;
-		io.sockets.emit('newuser', me);*/
+    //io.socket.emit('played');
+		//users[me.id] = me;
+		//io.sockets.emit('newuser', me);
 	})
 });
 
