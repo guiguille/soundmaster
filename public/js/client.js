@@ -2,7 +2,7 @@ $(function(){
     
     new Heyoffline();
 
-    var socket = io.connect('http://192.168.1.38:1337');
+    var socket = io.connect(document.location.origin);
 
     
     
