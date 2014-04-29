@@ -14,9 +14,6 @@ app.get('/', function (req, res) {
 
 var server = app.listen(1337);
 
-/*Pinger_ping("192.168.1.10:8080", function(cb){
-  console.log(cb);
-});*/
 
 var io = require('socket.io').listen(server);
 
@@ -43,7 +40,7 @@ io.sockets.on('connection', function(socket) {
     //io.socket.emit('played');
 		//users[me.id] = me;
 		//io.sockets.emit('newuser', me);
-	})
+	});
 });
 
 /*doSomethingCrazy();
