@@ -1,10 +1,17 @@
 var http = require('http'),
     vlc = require('vlc-api')(),
     sys = require('sys'),
+    util = require('util'),
     express = require('express'),
     app         = express();
 
 //var vlc = require('../node_modules/vlc-api/')();
+
+vlc._base = util.format('http://:%s@%s:%d',
+ 'password',
+ 'localhost',
+  8080
+);
 
 app.use(express.static(process.cwd() + '/public'));
 
