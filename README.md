@@ -28,3 +28,11 @@ And you are up to go!
 
 Feel free to contribute!
 
+TODO
+----------------
+- Try a POC with a random full HD youtube video rendered in a webkit browser.
+- Replace VLC with nodewebkit
+- Frontend angularjs
+- Backend NodeJS
+
+
